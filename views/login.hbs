@@ -1,35 +1,54 @@
-<div class="auth app-container" id="login">
-  <div class="card">
-    {{#if refresh}}
-      <h2 class="typography-h2 card-title">Confirm Action</h2>
-    {{else if (eq requested_aal "aal2")}}
-      <h2 class="typography-h2 card-title">Two-Factor Authentication</h2>
-    {{else}}
-      <h2 class="typography-h2 card-title">Sign In</h2>
-    {{/if}}
+<div class="container" id="login">
+    <div class="row justify-content-center">
+        <div class="col-xl-6 col-lg-12 col-md-9">
+            <div class="card shadow-sm my-5">
+                <div class="card-body p-0">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="form">
+                                <div class="text-center">
+                                    {{#if refresh}}
+                                        <h1 class="h4 mb-4" style="color: black;">Confirm Action</h1>
+                                    {{else if (eq requested_aal "aal2")}}
+                                        <h1 class="h4 mb-4" style="color: black;">Two-Factor Authentication</h1>
+                                    {{else}}
+                                        <h1 class="h4 mb-4" style="color: black;">Login</h1>
+                                    {{/if}}
+                                </div>
+                                {{> messages messages=messages className="global"}}
 
-    {{> messages messages=messages className="global"}}
+                                {{> ui ui=ui}}
+                                <hr>
+                                <div class="text-center">
+                                    Don't have an account yet? <a class="font-weight-bold large" href="{{signUpUrl}}"
+                                                                  style="color: #cb0c9f;">Sign Up!</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
-    {{> ui ui=ui}}
-  </div>
 
-  {{#if isAuthenticated}}
-    <div class="card">
-      <div class="card-action">
-        <a class="typography-link typography-h2" data-testid="logout-link" href="{{logoutUrl}}">Log out</a>
-      </div>
-    </div>
-  {{else}}
-    <div class="card">
-      <div class="card-action">
-        <a class="typography-link typography-h2" data-testid="cta-link" href="{{signUpUrl}}">Create account</a>
-      </div>
-    </div>
-    <div class="card">
-      <div class="card-action">
-        <a class="typography-link typography-h2" data-testid="forgot-password" href="recovery">Recover
-          your account</a>
-      </div>
-    </div>
-  {{/if}}
+<!--    {{#if isAuthenticated}}-->
+<!--        <div class="card">-->
+<!--            <div class="card-action">-->
+<!--                <a class="typography-link typography-h2" data-testid="logout-link" href="{{logoutUrl}}">Log out</a>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--    {{else}}-->
+<!--        <div class="card">-->
+<!--            <div class="card-action">-->
+<!--                <a class="typography-link typography-h2" data-testid="cta-link" href="{{signUpUrl}}">Create account</a>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--        <div class="card">-->
+<!--            <div class="card-action">-->
+<!--                <a class="typography-link typography-h2" data-testid="forgot-password" href="recovery">Recover-->
+<!--                    your account</a>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--    {{/if}}-->
 </div>

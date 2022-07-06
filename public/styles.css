@@ -23,7 +23,7 @@ main {
 }
 
 .auth.app-container {
-    max-width: 335px;
+    /*max-width: 335px;*/
     padding-top: 70px;
 }
 
@@ -34,25 +34,25 @@ main {
     padding-right: 12px;
 }
 
-.card {
-    border: 1px solid var(--grey10);
-    background: var(--grey0);
-    margin-bottom: 18px;
-    padding: 20px;
-}
+/*.card {*/
+/*    border: 1px solid var(--grey10);*/
+/*    background: var(--grey0);*/
+/*    margin-bottom: 18px;*/
+/*    padding: 20px;*/
+/*}*/
 
-.card-title {
-    text-align: center;
-    color: var(--primary60);
-}
+/*.card-title {*/
+/*    text-align: center;*/
+/*    color: var(--primary60);*/
+/*}*/
 
-.card-action {
-    text-align: center;
-}
+/*.card-action {*/
+/*    text-align: center;*/
+/*}*/
 
-.card-action a {
-    font-size: 15px;
-}
+/*.card-action a {*/
+/*    font-size: 15px;*/
+/*}*/
 
 fieldset {
     border: none;
@@ -116,4 +116,69 @@ fieldset {
 form img {
     margin: 0 auto;
     display: block;
+}
+
+ #myBu {
+     background-color: transparent;
+     border: none;
+     color: black;
+ }
+
+#myBu:focus {
+    outline: none !important;
+}
+.bg-gradient {
+    background-color: white;
+}
+
+.card {
+    border: 0;
+}
+.card-body {
+    background-color: whitesmoke;
+    /* box-shadow: 0.5px 0.5px px 0.2px rgba(44, 41, 41, 0.25);/ */
+}
+.card {
+    /*! -webkit-box-shadow: 0 .15rem 1.75rem 0 rgba(58, 59, 69, .15) !important; */
+    box-shadow: 0 .15rem 2.75rem 0 rgba(58, 59, 69, .15) !important;
+}
+
+label {
+    color: black;
+}
+#loginFail {
+    color: red;
+}
+#recovery{
+    color: #cb0c9f;
+    padding-left: 5px;
+}
+#button {
+    background-color: #cb0c9f;
+    border: 0.5px solid black;
+}
+
+
+.form {
+    padding: 3rem !important
+}
+
+
+.form-control {
+    background-color: white;
+    color: black;
+}
+
+.container, .container-fluid, .container-login {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem
+}
+
+#label {
+    color: black;
+}
+
+#backButton {
+    padding-right: 1.5rem;
+    color: #cb0c9f;
 }
