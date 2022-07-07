@@ -1,0 +1,26 @@
+name: Docker Image CI
+
+on:
+  push:
+    branches: [ "master" ]
+  pull_request:
+    branches: [ "master" ]
+
+jobs:
+
+  build:
+
+    runs-on: ubuntu-latest
+    
+    steps:
+    - uses: actions/checkout@v3
+    - name: Login to registry
+      env:
+        image_name: "auth"
+        token: ${{ secrets.GITLAB_TOKEN }}
+        username: ${{ secrets.GITLAB_USERNAME }} 
+      run: docker login registry.gitlab.com -u ${username} -p ${token}
+    - name: Build the Docker image
+      run: docker build . --file Dockerfile --tag registry.gitlab.com/cologicdev/${image_name}
+    - name: Pushing Image up
+      run: docker push registry.gitlab.com/cologicdev/${image_name}
